@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <img src="<%= shop.photo %>" alt="" style="width: 250px; height: 300px;"><br>
+      <a href="/users/logout" class="btn btn-secondary">Logout</a>
+      <a href="/" class="btn btn-secondary">Back to mainpage</a>
+    </div>
+    <div class="col-sm">
+      <p><%= shop.description %></p>
+      <ul>
+        <% for (var comment of shop.comments){ %>
+        <li><%= comment %></li>
+        <% } %>
+      </ul>
+    </div>
+    <div class="col-sm">
+      <% include ./partials/messages %>
+      <form action="/shops/<%= shop.name %>" method="POST">
+        <div class="form-group">
+          <label for="comment">Leave your comment</label>
+          <input type="comment" id="comment" name="comment" class="form-control" placeholder="Enter your comment"
+            value="<%= typeof comment != 'undefined' ? comment : '' %>" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

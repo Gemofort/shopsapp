@@ -1,0 +1,36 @@
+<h1>Mainpage</h1>
+<% if (!user) { %>
+<a href='/welcome' class='btn btn-danger' style="position: absolute;margin-top: -45px; margin-left: 400px;">
+  Login
+  <i class="fas fa-sign-in-alt"></i>
+</a>
+<% } %>
+<% if (user) { %>
+<a href='/users/logout' class='btn btn-secondary' style="position: absolute;margin-top: -45px; margin-left: 400px;">
+  Logout
+  <i class="fas fa-sign-out-alt"></i>
+</a>
+<% } %>
+
+<ul>
+  <li style="display: inline-block">
+    <a href="/shops/<%= shop1.name %>">
+      <div class="card" style="width: 250px; height: 300px;">
+        <img class="card-img-top" src="<%= shop1.photo %>" alt="Card image cap" style="width: 250px; height: 250px;">
+        <div class="card-body">
+          <h5 class="card-title" id="shopName"><%= shop1.name %></h5>
+        </div>
+      </div>
+    </a>
+  </li>
+  <li style="display: inline-block">
+    <a href="/shops/<%= shop2.name %>">
+      <div class="card" style="width: 250px; height: 300px;">
+        <img class="card-img-top" src="<%= shop2.photo %>" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" id="shopName"><%= shop2.name %></h5>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>

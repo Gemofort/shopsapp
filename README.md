@@ -1,0 +1,1 @@
+Used mongodb atlas, express, passport, mongoose, ejs, nodemon
